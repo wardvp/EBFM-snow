@@ -27,14 +27,14 @@ for t=1:time.tn
     % Snow & firn model
     [OUT] = TIME_snow_model(C,OUT,IN,time.dt,grid,phys);
         
-%     % Mass balance
-%     [OUT] = TIME_mass_balance(OUT,IN,C);
-%     
-%     % Write output to files
-%     [io,OUTFILE] = TIME_write_to_file(OUTFILE,io,OUT,grid,t,time,C);
+    % Mass balance
+    [OUT] = TIME_mass_balance(OUT,IN,C);
+    
+    % Write output to files
+    [io,OUTFILE] = TIME_write_to_file(OUTFILE,io,OUT,grid,t,time,C);
 end
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%% Save restart-file at end run
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FINAL_create_boot_file(OUT,io);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Save restart-file at end run
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+FINAL_create_boot_file(OUT,io);

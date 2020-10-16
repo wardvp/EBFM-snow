@@ -42,6 +42,7 @@ if t==1
     OUTFILE.varsout(end+1,:) = {'subS'          ;'mm w.e.'  ;'sample'   ;'Slush water content'};
     OUTFILE.varsout(end+1,:) = {'subW'          ;'mm w.e.'  ;'sample'   ;'Irreducible water'};
     OUTFILE.varsout(end+1,:) = {'subZ'          ;'m'        ;'sample'   ;'Layer thickness'};
+    OUTFILE.varsout(end+1,:) = {'subSOIL'       ;'boolean'  ;'sample'   ;'Snow (0) or soil (1)'};
     
     io.varsout = struct('varname',{OUTFILE.varsout{1:end,1}},...
         'units',{OUTFILE.varsout{1:end,2}},'type',{OUTFILE.varsout{1:end,3}},...
