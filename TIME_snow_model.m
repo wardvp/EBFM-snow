@@ -174,7 +174,7 @@ OUT.Dens_firn(cond) = dt./C.yeardays.*grav_const(cond).*IN.yearsnow(...
 % Densification of seasonal snow                                            % SOURCE: Kampenhout et al. (2017)
 cond = OUT.subD<C.Dfirn & OUT.subSOIL==0;
 
-CC_tap = 175;
+CC_tap = 200;
 CC1 = zeros(grid.gpsum,nl);
 CC2 = zeros(grid.gpsum,nl);
 CC1(OUT.subD<CC_tap) = 1;
@@ -402,7 +402,6 @@ runoff_slush = avail_S - 1.0/(1.0+dt/C.Trunoff).*avail_S;                   % ru
 avail_S = 1.0/(1.0+dt/C.Trunoff).*avail_S;
 avail_S(avail_S<1d-25) = 0.0;
 OUT.subS = zeros(grid.gpsum,nl);
-slushspace = zeros(grid.gpsum,nl);
 for n=nl:-1:1
     cond1 = avail_S>slushspace(:,n);
     OUT.subS(cond1,n) = slushspace(cond1,n);
